@@ -1,0 +1,29 @@
+<h1> eat a burger! </h1>
+<ul>
+  {{#each burger}}
+    {{#unless devoured}}
+      <button onclick="devour()" class="change-state" data-id="{{id}}" data-devoured="{{devoured}}">{{ burger_name }}</button>
+      {{/unless}}
+    {{/each}}
+      {{#if devoured}}CHOMP!{{else}}Waiting to be Eaten!{{/if}}
+</ul>
+
+
+
+
+<h2> Add a Burger </h2>
+
+<form class="create-form">
+
+  <div class="form-group">
+    <input type="text" name="burgerName"> Name a burger!
+  </div>
+
+  <button type="submit" id="submit">Add a Burger</button>
+</form>
+
+<script>
+  function devour() {
+    $("button").attr("data-devoured", true)
+  };
+</script>
